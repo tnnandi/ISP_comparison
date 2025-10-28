@@ -1,4 +1,4 @@
-| Model | Reference | Core Method | Perturbation Encoding | Perturbation Types | Combination Support | Training Data | Output / Prediction Objective | Benchmark Highlights |
+| Model | Reference | Core Method | Perturbation Encoding | Perturbation Types | Combination Support | Training Data | Output / Prediction Objective | Benchmarking |
 |--------|------------|--------------|------------------------|--------------------|---------------------|----------------|--------------------------------|-----------------------|
 | **scGen** | Lotfollahi et al., 2019 | VAE + latent space arithmetic | Mean-difference vectors between perturbed and unperturbed distributions | Cytokine stimulation, infection | No | Human PBMCs, intestinal epithelial cells, phagocytes | Predicts full transcriptome under unseen perturbations | Recovers held-out stimulus responses with high accuracy |
 | **CellOT** | Bunne et al., 2023 | Neural Optimal Transport (OT) | Implicit | Drugs, gene knockouts | - | statefate, SciPlex-3 | - | - |
@@ -9,5 +9,6 @@
 | **CRISP** | Wang et al., 2025 | VAE based contrastive learning | scFMs + VAE, RDKit | Genetic, drug | Limited | NeurIPS (PBMCs), SciPlex3 (cancer cell lines), GBM, PC9 (NSCLC), PBMC-bench | outputs cell type specific perturbed gene expression profile | - |
 | **C2S-Scale** | Rizvi et al., 2025 | LLM trained on Cell2Sentence data (27 B params) | Perturbations and cell states represented as text tokens | Genetic, drug, combinatorial | Yes | >50 M cells + biological text corpora | Generates transcriptomic and textual responses; context-conditioned reasoning | Experimental validation of silmitasertib synergy; SOTA performance |
 | **Tx1** | Gandhi et al., 2025 | Masked-expression transformer (scGPT-style) with drug tokens | Joint embeddings for genes, cells, compounds | Small-molecule (cancer) | Yes | Tahoe-100 M (>100 M cells, 1,100 compounds) | Predicts gene essentiality & perturbation responses | 3–30× more compute-efficient than previous cell-state models |
-| **LPM** | Miladinovic et al., 2025 | Deep PRC-conditioned architecture | Symbolic representation of perturbation, readout & context | Drugs, genetic | Yes | Multi-omics pooled perturbation experiments | Predicts outcomes of unseen perturbations; infers gene–gene networks | SOTA performance and biological interpretability at scale |
+| **LPM** | Miladinovic et al., 2025 | MLP | Symbolic representation of perturbation, readout & context | Drugs, genetic | Yes | single cell + bulk RNASeq | - | compared against six baselines: CPA, GEARS, CatBoost combined with precomputed 
+gene embeddings from STRING, Reactome and Gene2Vec, Geneformer, scGPT and GenePT |
 
